@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 import asifTalksBadge from '../assets/asif-talks-badge.jpg';
@@ -41,6 +41,7 @@ export const HeroSection: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -48,6 +49,17 @@ export const HeroSection: React.FC = () => {
     };
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  // Enforce autoplay on mobile browsers (iOS Safari / Android Chrome)
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(() => {
+        // Fallback gracefully if browser policy delays autoplay
+      });
+    }
   }, []);
 
   return (
@@ -69,20 +81,22 @@ export const HeroSection: React.FC = () => {
           />
         )}
 
-        {/* ================= 2. FIXED HERO.MP4 VIDEO LAYER (LIKE PREVIOUS) ================= */}
-        <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-black flex items-center justify-end">
+        {/* ================= 2. FIXED HERO.MP4 VIDEO LAYER ================= */}
+        <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-black flex items-center justify-center md:justify-end">
           <video
+            ref={videoRef}
             autoPlay
             muted
             loop
             playsInline
-            className="h-screen w-auto max-w-none object-contain origin-right scale-95 md:scale-[0.98] lg:scale-100"
+            poster="/hero-frame.jpg"
+            className="w-full h-full object-cover object-center md:w-auto md:h-screen md:max-w-none md:object-contain md:origin-right md:scale-[0.98] lg:scale-100 filter brightness-[0.88] md:brightness-100"
           >
             <source src="/videos/hero.mp4" type="video/mp4" />
           </video>
 
-          {/* Seamless Soft Left Edge Blend */}
-          <div className="absolute inset-0 bg-black/60 md:bg-transparent md:w-1/2 md:bg-gradient-to-r md:from-black md:via-black/85 md:to-transparent pointer-events-none" />
+          {/* Seamless Soft Edge Blend (Mobile: Cinematic vignette, Desktop: Left soft edge blend) */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-black/60 md:from-black md:via-black/85 md:to-transparent md:w-1/2 md:bg-gradient-to-r pointer-events-none" />
 
           {/* ================= 3. ANIMATED WATERMARK EMBLEM ================= */}
           <div className="hidden md:flex absolute bottom-6 right-6 lg:bottom-10 lg:right-12 pointer-events-none items-center justify-center z-10">
