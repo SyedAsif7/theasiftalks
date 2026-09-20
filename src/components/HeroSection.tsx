@@ -154,10 +154,6 @@ export const HeroSection: React.FC = () => {
                 >
                   THE ASIF TALKS.
                 </span>
-                <span className="text-[7.5px] sm:text-[8px] font-mono tracking-[0.18em] sm:tracking-[0.2em] text-[#00d2ff] flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00d2ff] animate-ping" />
-                  UNFILTERED LEADERSHIP
-                </span>
               </div>
             </a>
 
@@ -248,9 +244,6 @@ export const HeroSection: React.FC = () => {
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00d2ff] animate-ping" />
                   <span>THE ASIF TALKS</span>
                 </span>
-                <span className="text-[10px] font-mono tracking-[0.18em] text-[#C4B29E] hidden sm:inline">
-                  UNFILTERED DIALOGUES
-                </span>
               </motion.div>
 
               {/* Massive Condensed Headline */}
@@ -274,16 +267,6 @@ export const HeroSection: React.FC = () => {
                     LEADERSHIP.
                   </span>
                 </h1>
-              </motion.div>
-
-              {/* Subtitle Technologies / Pillars */}
-              <motion.div variants={fadeUpVariants} className="mb-4">
-                <p
-                  className="text-[9.5px] sm:text-[11px] md:text-xs font-normal tracking-[0.2em] sm:tracking-[0.26em] uppercase text-[#C4B29E] leading-relaxed"
-                  style={{ fontFamily: "'Montserrat', sans-serif" }}
-                >
-                  CIVIL ADMINISTRATION <span className="text-[#00d2ff] mx-1">•</span> MUNICIPAL GOVERNANCE <span className="text-[#00d2ff] mx-1">•</span> TECH ECOSYSTEMS
-                </p>
               </motion.div>
 
               {/* 3-Line Description */}
