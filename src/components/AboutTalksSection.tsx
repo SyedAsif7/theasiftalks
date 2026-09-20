@@ -103,7 +103,7 @@ export const AboutTalksSection: React.FC = () => {
   return (
     <section
       id="about"
-      className="relative w-full bg-black text-[#E8DFD8] font-sans selection:bg-[#00d2ff] selection:text-black py-24 sm:py-32 px-6 sm:px-12 lg:px-20 overflow-hidden"
+      className="relative w-full bg-black text-[#E8DFD8] font-sans selection:bg-[#00d2ff] selection:text-black py-16 sm:py-32 px-4 sm:px-12 lg:px-20 overflow-hidden"
     >
       {/* Ambient Lighting Orbs */}
       <div className="absolute top-1/6 left-1/4 w-[38rem] h-[38rem] bg-[#00d2ff]/5 rounded-full blur-[190px] pointer-events-none" />
@@ -134,13 +134,13 @@ export const AboutTalksSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-16"
+          className="mb-12 sm:mb-16"
         >
           <span className="text-xs font-mono tracking-[0.25em] text-[#D4AF37] uppercase block mb-2">
             WHAT IS THE ASIF TALKS?
           </span>
           <h2
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.4rem] tracking-tight uppercase leading-[0.88] select-none"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-[5.4rem] tracking-tight uppercase leading-[0.92] sm:leading-[0.88] select-none break-words"
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-200 to-zinc-400">
@@ -204,20 +204,20 @@ export const AboutTalksSection: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.9 }}
-            className="lg:col-span-5 relative p-7 sm:p-8 rounded-2xl border border-zinc-800 bg-[#070b13] shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden"
+            className="lg:col-span-5 relative p-4 sm:p-8 rounded-2xl border border-zinc-800 bg-[#070b13] shadow-[0_25px_60px_rgba(0,0,0,0.9)] overflow-hidden"
           >
             {/* Top Cyan Horizon Edge */}
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#00d2ff] via-[#D4AF37] to-transparent" />
 
-            <div className="flex items-center space-x-4 mb-6">
-              <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[#00d2ff]/60 shadow-[0_0_20px_rgba(0,210,255,0.3)] shrink-0">
+            <div className="flex items-center space-x-3.5 sm:space-x-4 mb-6">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-[#00d2ff]/60 shadow-[0_0_20px_rgba(0,210,255,0.3)] shrink-0">
                 <img src={asifPortrait} alt="Syed Asif" className="w-full h-full object-cover object-top" />
               </div>
               <div>
-                <span className="text-[9.5px] font-mono tracking-[0.25em] text-[#00d2ff] uppercase block">
+                <span className="text-[9px] sm:text-[9.5px] font-mono tracking-[0.2em] sm:tracking-[0.25em] text-[#00d2ff] uppercase block">
                   HOST &amp; STUDENT LEADER
                 </span>
-                <h3 className="text-xl font-bold text-white uppercase" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                <h3 className="text-lg sm:text-xl font-bold text-white uppercase" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                   SYED ASIF
                 </h3>
                 <span className="text-xs font-mono text-[#D4AF37]">
@@ -227,7 +227,7 @@ export const AboutTalksSection: React.FC = () => {
             </div>
 
             {/* Official Logos Bar */}
-            <div className="p-4 rounded-xl bg-black/70 border border-zinc-800 mb-6 flex items-center justify-around gap-2">
+            <div className="p-3 sm:p-4 rounded-xl bg-black/70 border border-zinc-800 mb-6 flex items-center justify-around gap-1.5 sm:gap-2">
               <div className="flex flex-col items-center">
                 <div className="w-10 h-10 rounded-full overflow-hidden border border-[#00d2ff]/60 flex items-center justify-center bg-black">
                   <img src={asifTalksBadge} alt="The Asif Talks" className="h-full w-full object-cover" />

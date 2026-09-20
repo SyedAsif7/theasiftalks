@@ -71,7 +71,7 @@ export const CollaborationDeskSection: React.FC = () => {
   return (
     <section
       id="collaborate"
-      className="relative w-full bg-black text-[#E8DFD8] font-sans selection:bg-[#00d2ff] selection:text-black py-24 sm:py-32 px-6 sm:px-12 lg:px-20 overflow-hidden"
+      className="relative w-full bg-black text-[#E8DFD8] font-sans selection:bg-[#00d2ff] selection:text-black py-16 sm:py-32 px-4 sm:px-12 lg:px-20 overflow-hidden"
     >
       {/* Background Lighting */}
       <div className="absolute top-1/4 right-1/4 w-[38rem] h-[38rem] bg-[#00d2ff]/5 rounded-full blur-[190px] pointer-events-none" />
@@ -91,13 +91,13 @@ export const CollaborationDeskSection: React.FC = () => {
         </div>
 
         {/* Section Headline */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-14 gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 sm:mb-14 gap-6">
           <div>
             <span className="text-xs font-mono tracking-[0.25em] text-[#D4AF37] uppercase block mb-2">
               COMMUNITY &amp; EXECUTIVE DESK
             </span>
             <h2
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.2rem] tracking-tight uppercase leading-[0.88] select-none"
+              className="text-3xl sm:text-5xl md:text-6xl lg:text-[5.2rem] tracking-tight uppercase leading-[0.92] sm:leading-[0.88] select-none break-words"
               style={{ fontFamily: "'Bebas Neue', sans-serif" }}
             >
               <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-200 to-zinc-400">
@@ -118,26 +118,26 @@ export const CollaborationDeskSection: React.FC = () => {
         </div>
 
         {/* ================= DIRECT CONTACT QUICK STRIP ================= */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 mb-10 sm:mb-12">
           {/* Email Quick Access */}
           <a
             href="mailto:theasiftalks@gmail.com"
-            className="p-5 rounded-xl border border-zinc-800 bg-[#070b13] hover:border-[#00d2ff]/60 hover:bg-[#00d2ff]/10 flex items-center justify-between group transition-all duration-300"
+            className="p-4 sm:p-5 rounded-xl border border-zinc-800 bg-[#070b13] hover:border-[#00d2ff]/60 hover:bg-[#00d2ff]/10 flex items-center justify-between group transition-all duration-300"
           >
-            <div className="flex items-center space-x-3.5">
-              <div className="w-10 h-10 rounded-lg bg-black border border-zinc-700 flex items-center justify-center text-lg text-[#00d2ff]">
+            <div className="flex items-center space-x-3 truncate">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-black border border-zinc-700 flex items-center justify-center text-base sm:text-lg text-[#00d2ff] shrink-0">
                 ✉
               </div>
-              <div>
-                <span className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase block">
+              <div className="truncate">
+                <span className="text-[9px] sm:text-[10px] font-mono tracking-widest text-zinc-500 uppercase block">
                   OFFICIAL EMAIL INQUIRIES
                 </span>
-                <span className="text-sm font-semibold text-white font-mono group-hover:text-[#00d2ff] transition-colors">
+                <span className="text-xs sm:text-sm font-semibold text-white font-mono group-hover:text-[#00d2ff] transition-colors truncate block">
                   theasiftalks@gmail.com
                 </span>
               </div>
             </div>
-            <span className="text-xs font-mono text-zinc-500 group-hover:text-white group-hover:translate-x-1 transition-all">
+            <span className="text-xs font-mono text-zinc-500 group-hover:text-white group-hover:translate-x-1 transition-all shrink-0 ml-2">
               Write ↗
             </span>
           </a>
@@ -147,29 +147,29 @@ export const CollaborationDeskSection: React.FC = () => {
             href="https://wa.me/918788740090"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-5 rounded-xl border border-zinc-800 bg-[#070b13] hover:border-emerald-500/60 hover:bg-emerald-950/20 flex items-center justify-between group transition-all duration-300"
+            className="p-4 sm:p-5 rounded-xl border border-zinc-800 bg-[#070b13] hover:border-emerald-500/60 hover:bg-emerald-950/20 flex items-center justify-between group transition-all duration-300"
           >
-            <div className="flex items-center space-x-3.5">
-              <div className="w-10 h-10 rounded-lg bg-black border border-zinc-700 flex items-center justify-center text-lg text-emerald-400">
+            <div className="flex items-center space-x-3 truncate">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-black border border-zinc-700 flex items-center justify-center text-base sm:text-lg text-emerald-400 shrink-0">
                 💬
               </div>
-              <div>
-                <span className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase block">
+              <div className="truncate">
+                <span className="text-[9px] sm:text-[10px] font-mono tracking-widest text-zinc-500 uppercase block">
                   WHATSAPP DIRECT LINE
                 </span>
-                <span className="text-sm font-semibold text-white font-mono group-hover:text-emerald-400 transition-colors">
+                <span className="text-xs sm:text-sm font-semibold text-white font-mono group-hover:text-emerald-400 transition-colors truncate block">
                   +91 8788740090
                 </span>
               </div>
             </div>
-            <span className="text-xs font-mono text-zinc-500 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all">
+            <span className="text-xs font-mono text-zinc-500 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all shrink-0 ml-2">
               Chat ↗
             </span>
           </a>
         </div>
 
         {/* ================= MAIN DUAL TAB PORTAL ================= */}
-        <div className="relative rounded-2xl border border-zinc-800 bg-[#080d16] p-6 sm:p-10 shadow-[0_25px_70px_rgba(0,0,0,0.95)] overflow-hidden mb-14">
+        <div className="relative rounded-2xl border border-zinc-800 bg-[#080d16] p-4 sm:p-10 shadow-[0_25px_70px_rgba(0,0,0,0.95)] overflow-hidden mb-14">
           
           {/* Top Cyan Accent Horizon */}
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#00d2ff] to-transparent" />

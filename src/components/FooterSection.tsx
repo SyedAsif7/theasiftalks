@@ -7,14 +7,14 @@ export const FooterSection: React.FC = () => {
   };
 
   return (
-    <footer className="relative w-full bg-[#03060a] text-[#E8DFD8] font-sans selection:bg-[#00d2ff] selection:text-black pt-20 pb-12 px-6 sm:px-12 lg:px-20 border-t border-zinc-900 overflow-hidden">
+    <footer className="relative w-full bg-[#03060a] text-[#E8DFD8] font-sans selection:bg-[#00d2ff] selection:text-black pt-14 sm:pt-20 pb-10 sm:pb-12 px-4 sm:px-12 lg:px-20 border-t border-zinc-900 overflow-hidden">
       {/* Background Subtle Gradient */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[50rem] h-[20rem] bg-[#00d2ff]/[0.02] blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
         
         {/* Main Footer Row */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-zinc-800/80 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 sm:gap-12 pb-12 sm:pb-16 border-b border-zinc-800/80 items-start">
           
           {/* Brand & Show Description (5 Cols) */}
           <div className="md:col-span-5 space-y-5">

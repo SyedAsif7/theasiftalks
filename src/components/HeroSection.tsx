@@ -85,7 +85,7 @@ export const HeroSection: React.FC = () => {
           <div className="absolute inset-0 bg-black/60 md:bg-transparent md:w-1/2 md:bg-gradient-to-r md:from-black md:via-black/85 md:to-transparent pointer-events-none" />
 
           {/* ================= 3. ANIMATED WATERMARK EMBLEM ================= */}
-          <div className="absolute bottom-6 right-6 lg:bottom-10 lg:right-12 pointer-events-none flex items-center justify-center z-10">
+          <div className="hidden md:flex absolute bottom-6 right-6 lg:bottom-10 lg:right-12 pointer-events-none items-center justify-center z-10">
             <div className="relative flex items-center justify-center">
               <div className="absolute w-36 h-36 bg-black/85 rounded-full blur-xl" />
 
@@ -115,7 +115,7 @@ export const HeroSection: React.FC = () => {
         </div>
 
         {/* ================= 4. CONTENT LAYER ================= */}
-        <div className="relative z-10 flex flex-col justify-between h-full w-full px-6 sm:px-12 lg:px-16 pt-6 pb-8 pointer-events-none">
+        <div className="relative z-10 flex flex-col justify-between min-h-screen w-full px-4 sm:px-12 lg:px-16 pt-5 pb-8 pointer-events-none">
           
           {/* Header & Navigation Bar */}
           <header className="relative flex items-center justify-between w-full pointer-events-auto">
@@ -124,9 +124,9 @@ export const HeroSection: React.FC = () => {
               href="#"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
-              className="flex items-center space-x-3 group"
+              className="flex items-center space-x-2.5 sm:space-x-3 group"
             >
-              <div className="relative w-8 h-8 rounded-full overflow-hidden border border-[#00d2ff]/60 shadow-[0_0_12px_rgba(0,210,255,0.3)] transition-transform duration-300 group-hover:scale-105">
+              <div className="relative w-8 h-8 rounded-full overflow-hidden border border-[#00d2ff]/60 shadow-[0_0_12px_rgba(0,210,255,0.3)] transition-transform duration-300 group-hover:scale-105 shrink-0">
                 <img
                   src={asifTalksBadge}
                   alt="The Asif Talks Logo"
@@ -135,12 +135,12 @@ export const HeroSection: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span
-                  className="text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase text-white group-hover:text-[#00d2ff] transition-colors"
+                  className="text-xs sm:text-sm font-semibold tracking-[0.25em] sm:tracking-[0.3em] uppercase text-white group-hover:text-[#00d2ff] transition-colors"
                   style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
                   THE ASIF TALKS.
                 </span>
-                <span className="text-[8px] font-mono tracking-[0.2em] text-[#00d2ff] flex items-center gap-1">
+                <span className="text-[7.5px] sm:text-[8px] font-mono tracking-[0.18em] sm:tracking-[0.2em] text-[#00d2ff] flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00d2ff] animate-ping" />
                   UNFILTERED LEADERSHIP
                 </span>
@@ -167,12 +167,12 @@ export const HeroSection: React.FC = () => {
             </nav>
 
             {/* Right Action Button */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2 sm:space-x-3">
               <button
                 onClick={() => setIsVideoModalOpen(true)}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
-                className="group flex items-center space-x-2 text-[11px] tracking-[0.24em] font-light uppercase py-2 px-4 border border-[#00d2ff]/50 hover:border-[#00d2ff] bg-[#00d2ff]/10 text-[#00d2ff] hover:text-white transition-all duration-300 backdrop-blur-sm ml-auto md:ml-0 rounded-sm shadow-[0_0_15px_rgba(0,210,255,0.2)]"
+                className="hidden sm:flex group items-center space-x-2 text-[11px] tracking-[0.24em] font-light uppercase py-2 px-4 border border-[#00d2ff]/50 hover:border-[#00d2ff] bg-[#00d2ff]/10 text-[#00d2ff] hover:text-white transition-all duration-300 backdrop-blur-sm ml-auto md:ml-0 rounded-sm shadow-[0_0_15px_rgba(0,210,255,0.2)]"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
@@ -185,7 +185,7 @@ export const HeroSection: React.FC = () => {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden p-2 rounded border border-zinc-800 bg-zinc-950 text-zinc-300 hover:text-white"
+                className="md:hidden p-2 px-3 rounded-lg border border-zinc-800 bg-zinc-950/90 text-zinc-200 hover:text-white text-sm"
                 aria-label="Toggle Navigation"
               >
                 {mobileMenuOpen ? '✕' : '☰'}
@@ -195,13 +195,13 @@ export const HeroSection: React.FC = () => {
 
           {/* Mobile Menu Dropdown */}
           {mobileMenuOpen && (
-            <div className="md:hidden py-3 px-5 my-2 bg-zinc-950/95 border border-zinc-800 rounded flex flex-col space-y-2 pointer-events-auto z-30">
+            <div className="md:hidden py-4 px-5 my-3 bg-black/95 backdrop-blur-xl border border-zinc-800 rounded-2xl flex flex-col space-y-3 pointer-events-auto z-40 shadow-[0_20px_50px_rgba(0,0,0,0.95)]">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-xs font-mono tracking-widest text-zinc-300 hover:text-[#00d2ff] py-1"
+                  className="text-xs font-mono tracking-widest text-zinc-300 hover:text-[#00d2ff] py-1.5 border-b border-zinc-800/60"
                 >
                   {item.name}
                 </a>
@@ -211,9 +211,9 @@ export const HeroSection: React.FC = () => {
                   setMobileMenuOpen(false);
                   setIsVideoModalOpen(true);
                 }}
-                className="w-full text-center py-2 bg-[#00d2ff]/20 border border-[#00d2ff] text-[#00d2ff] text-xs font-mono uppercase tracking-wider rounded"
+                className="w-full text-center py-2.5 bg-[#00d2ff] text-black text-xs font-mono font-bold uppercase tracking-wider rounded-lg shadow-[0_0_15px_rgba(0,210,255,0.4)] mt-1"
               >
-                Watch Episode 1 ↗
+                Watch Episode 1 ▶
               </button>
             </div>
           )}
@@ -242,7 +242,7 @@ export const HeroSection: React.FC = () => {
               {/* Massive Condensed Headline */}
               <motion.div variants={fadeUpVariants} className="relative mb-3.5 select-none">
                 <h1
-                  className="text-6xl sm:text-7xl md:text-8xl lg:text-[6.6rem] xl:text-[7.4rem] tracking-tight uppercase leading-[0.84]"
+                  className="text-5xl sm:text-7xl md:text-8xl lg:text-[6.6rem] xl:text-[7.4rem] tracking-tight uppercase leading-[0.88] sm:leading-[0.84] break-words"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
                   {/* Line 1 */}
@@ -265,7 +265,7 @@ export const HeroSection: React.FC = () => {
               {/* Subtitle Technologies / Pillars */}
               <motion.div variants={fadeUpVariants} className="mb-4">
                 <p
-                  className="text-[10px] sm:text-[11px] md:text-xs font-normal tracking-[0.26em] uppercase text-[#C4B29E]"
+                  className="text-[9.5px] sm:text-[11px] md:text-xs font-normal tracking-[0.2em] sm:tracking-[0.26em] uppercase text-[#C4B29E] leading-relaxed"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
                   CIVIL ADMINISTRATION <span className="text-[#00d2ff] mx-1">•</span> MUNICIPAL GOVERNANCE <span className="text-[#00d2ff] mx-1">•</span> TECH ECOSYSTEMS
@@ -286,7 +286,7 @@ export const HeroSection: React.FC = () => {
               {/* CTA Buttons */}
               <motion.div
                 variants={fadeUpVariants}
-                className="flex flex-row items-center gap-4 sm:gap-6 mb-7"
+                className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-6 mb-7 w-full sm:w-auto"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 {/* Primary CTA: Watch Episode 1 on YouTube */}
@@ -296,7 +296,7 @@ export const HeroSection: React.FC = () => {
                   onMouseLeave={() => setIsHovered(false)}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="relative inline-flex items-center space-x-3 px-6 sm:px-7 py-3.5 border border-[#00d2ff] bg-[#00d2ff] hover:bg-[#38bdf8] text-black text-[11px] font-semibold tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(0,210,255,0.35)] rounded-sm"
+                  className="relative inline-flex items-center justify-center space-x-3 px-6 sm:px-7 py-3.5 border border-[#00d2ff] bg-[#00d2ff] hover:bg-[#38bdf8] text-black text-[11px] font-semibold tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_25px_rgba(0,210,255,0.35)] rounded-sm text-center"
                 >
                   <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
                   <span>WATCH EPISODE 1</span>
@@ -310,7 +310,7 @@ export const HeroSection: React.FC = () => {
                   onMouseLeave={() => setIsHovered(false)}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="relative inline-flex items-center space-x-2 px-6 sm:px-7 py-3.5 border border-[#00d2ff]/40 hover:border-[#00d2ff] bg-[#070b13]/80 hover:bg-[#00d2ff]/10 text-[#CBD5E1] hover:text-white text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 rounded-sm"
+                  className="relative inline-flex items-center justify-center space-x-2 px-6 sm:px-7 py-3.5 border border-[#00d2ff]/40 hover:border-[#00d2ff] bg-[#070b13]/80 hover:bg-[#00d2ff]/10 text-[#CBD5E1] hover:text-white text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 rounded-sm text-center"
                 >
                   <span>EXPLORE EPISODES</span>
                   <span className="text-xs">↓</span>
@@ -320,7 +320,7 @@ export const HeroSection: React.FC = () => {
               {/* Live Impact Metrics */}
               <motion.div
                 variants={fadeUpVariants}
-                className="grid grid-cols-4 gap-2.5 pt-5 border-t border-[#00d2ff]/20 max-w-lg"
+                className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-2.5 pt-5 border-t border-[#00d2ff]/20 max-w-lg w-full"
               >
                 <div className="flex flex-col">
                   <span className="text-2xl sm:text-3xl font-light text-[#00d2ff] tracking-tight" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
@@ -330,7 +330,7 @@ export const HeroSection: React.FC = () => {
                     Debut Views
                   </span>
                 </div>
-                <div className="flex flex-col border-l border-zinc-800 pl-2.5">
+                <div className="flex flex-col border-l border-zinc-800 pl-3 sm:pl-2.5">
                   <span className="text-2xl sm:text-3xl font-light text-[#00d2ff] tracking-tight" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                     300+
                   </span>
@@ -338,7 +338,7 @@ export const HeroSection: React.FC = () => {
                     Live Audience
                   </span>
                 </div>
-                <div className="flex flex-col border-l border-zinc-800 pl-2.5">
+                <div className="flex flex-col sm:border-l border-zinc-800 sm:pl-2.5">
                   <span className="text-2xl sm:text-3xl font-light text-[#D4AF37] tracking-tight" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                     2+
                   </span>
@@ -346,7 +346,7 @@ export const HeroSection: React.FC = () => {
                     Leaders Hosted
                   </span>
                 </div>
-                <div className="flex flex-col border-l border-zinc-800 pl-2.5">
+                <div className="flex flex-col border-l border-zinc-800 pl-3 sm:pl-2.5">
                   <span className="text-2xl sm:text-3xl font-light text-white tracking-tight" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                     120+
                   </span>

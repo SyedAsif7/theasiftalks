@@ -195,7 +195,7 @@ export const EpisodesSection: React.FC = () => {
   return (
     <section
       id="episodes"
-      className="relative w-full bg-black text-[#E8DFD8] font-sans selection:bg-[#00d2ff] selection:text-black py-24 sm:py-32 px-6 sm:px-12 lg:px-20 overflow-hidden"
+      className="relative w-full bg-black text-[#E8DFD8] font-sans selection:bg-[#00d2ff] selection:text-black py-16 sm:py-32 px-4 sm:px-12 lg:px-20 overflow-hidden"
     >
       {/* Background Lighting */}
       <div className="absolute top-1/4 left-1/3 w-[36rem] h-[36rem] bg-[#00d2ff]/5 rounded-full blur-[180px] pointer-events-none" />
@@ -221,7 +221,7 @@ export const EpisodesSection: React.FC = () => {
               THE ASIF TALKS VAULT
             </span>
             <h2
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-[5.4rem] tracking-tight uppercase leading-[0.88] select-none"
+              className="text-3xl sm:text-5xl md:text-6xl lg:text-[5.4rem] tracking-tight uppercase leading-[0.92] sm:leading-[0.88] select-none break-words"
               style={{ fontFamily: "'Bebas Neue', sans-serif" }}
             >
               <span className="block text-transparent bg-clip-text bg-gradient-to-b from-white via-zinc-200 to-zinc-400">
@@ -233,7 +233,7 @@ export const EpisodesSection: React.FC = () => {
             </h2>
           </div>
 
-          <div className="flex flex-col items-start lg:items-end gap-4">
+          <div className="flex flex-col items-start lg:items-end gap-4 w-full sm:w-auto">
             <p
               className="text-xs sm:text-sm font-light text-zinc-400 max-w-sm leading-relaxed"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -242,30 +242,30 @@ export const EpisodesSection: React.FC = () => {
             </p>
 
             {/* Filter Tabs */}
-            <div className="flex items-center p-1 rounded-lg border border-zinc-800 bg-[#070b13]">
+            <div className="flex flex-wrap sm:flex-nowrap items-center p-1 rounded-lg border border-zinc-800 bg-[#070b13] w-full sm:w-auto gap-1">
               <button
                 onClick={() => setActiveFilter('all')}
-                className={`px-3.5 py-1.5 rounded text-[10.5px] font-mono uppercase tracking-wider transition-all ${
+                className={`flex-1 sm:flex-initial px-3 py-1.5 rounded text-[10px] sm:text-[10.5px] font-mono uppercase tracking-wider transition-all text-center ${
                   activeFilter === 'all'
                     ? 'bg-[#00d2ff] text-black font-semibold shadow-[0_0_12px_rgba(0,210,255,0.3)]'
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >
-                All Episodes (3)
+                All (3)
               </button>
               <button
                 onClick={() => setActiveFilter('available')}
-                className={`px-3.5 py-1.5 rounded text-[10.5px] font-mono uppercase tracking-wider transition-all ${
+                className={`flex-1 sm:flex-initial px-3 py-1.5 rounded text-[10px] sm:text-[10.5px] font-mono uppercase tracking-wider transition-all text-center ${
                   activeFilter === 'available'
                     ? 'bg-[#00d2ff] text-black font-semibold shadow-[0_0_12px_rgba(0,210,255,0.3)]'
                     : 'text-zinc-400 hover:text-white'
                 }`}
               >
-                Available Now (1)
+                Available (1)
               </button>
               <button
                 onClick={() => setActiveFilter('upcoming')}
-                className={`px-3.5 py-1.5 rounded text-[10.5px] font-mono uppercase tracking-wider transition-all ${
+                className={`flex-1 sm:flex-initial px-3 py-1.5 rounded text-[10px] sm:text-[10.5px] font-mono uppercase tracking-wider transition-all text-center ${
                   activeFilter === 'upcoming'
                     ? 'bg-[#D4AF37] text-black font-semibold shadow-[0_0_12px_rgba(212,175,55,0.3)]'
                     : 'text-zinc-400 hover:text-white'
@@ -294,22 +294,22 @@ export const EpisodesSection: React.FC = () => {
               />
 
               {/* Episode Header & Image Frame */}
-              <div className="p-6">
+              <div className="p-4 sm:p-6">
                 
                 {/* Meta Header */}
-                <div className="flex items-center justify-between mb-4">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                   <span className="text-xs font-mono font-bold text-[#00d2ff]">
                     {ep.number} //
                   </span>
-                  <div className="flex items-center space-x-2">
+                  <div className="flex flex-wrap items-center gap-1.5">
                     {ep.status !== 'coming-soon' && (
-                      <span className="text-[9px] font-mono tracking-wider px-2 py-0.5 rounded bg-[#00d2ff]/10 border border-[#00d2ff]/40 text-[#00d2ff] uppercase flex items-center space-x-1">
+                      <span className="text-[8.5px] sm:text-[9px] font-mono tracking-wider px-2 py-0.5 rounded bg-[#00d2ff]/10 border border-[#00d2ff]/40 text-[#00d2ff] uppercase flex items-center space-x-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#00d2ff] animate-ping" />
-                        <span>300+ LIVE AUDIENCE</span>
+                        <span>300+ LIVE</span>
                       </span>
                     )}
                     <span
-                      className={`text-[9.5px] font-mono tracking-widest px-2.5 py-1 rounded uppercase border ${
+                      className={`text-[9px] sm:text-[9.5px] font-mono tracking-widest px-2 sm:px-2.5 py-0.5 sm:py-1 rounded uppercase border ${
                         ep.status === 'available'
                           ? 'bg-red-950/60 border-red-500/60 text-red-400'
                           : ep.status === 'post-production'
@@ -450,14 +450,14 @@ export const EpisodesSection: React.FC = () => {
         </div>
 
         {/* ================= SEASON 01 OFFICIAL SPONSORS SHOWCASE ================= */}
-        <div className="mt-14 p-6 sm:p-8 rounded-2xl border border-[#D4AF37]/35 bg-gradient-to-br from-[#080c14] via-[#0b101c] to-[#060810] shadow-[0_15px_45px_rgba(0,0,0,0.85)] relative overflow-hidden">
+        <div className="mt-14 p-4 sm:p-8 rounded-2xl border border-[#D4AF37]/35 bg-gradient-to-br from-[#080c14] via-[#0b101c] to-[#060810] shadow-[0_15px_45px_rgba(0,0,0,0.85)] relative overflow-hidden">
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent" />
           
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4 border-b border-zinc-800/80 pb-4">
             <div>
               <div className="flex items-center space-x-2 mb-1">
                 <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
-                <span className="text-[10px] font-mono tracking-[0.25em] text-[#D4AF37] uppercase">
+                <span className="text-[9.5px] sm:text-[10px] font-mono tracking-[0.2em] sm:tracking-[0.25em] text-[#D4AF37] uppercase">
                   OFFICIAL SEASON 01 SPONSORS &amp; BRAND PARTNERS
                 </span>
               </div>
@@ -468,14 +468,14 @@ export const EpisodesSection: React.FC = () => {
                 PROUDLY SUPPORTING EPISODE 1 &amp; EPISODE 2
               </h3>
             </div>
-            <span className="text-xs font-mono text-zinc-400">
+            <span className="text-[11px] sm:text-xs font-mono text-zinc-400">
               COMMUNITY &amp; BUSINESS ALLIANCE // PARBHANI
             </span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {/* Sponsor 1: Venkatesha Pure Veg */}
-            <div className="p-6 rounded-xl border border-zinc-800 bg-[#05070c] hover:border-[#D4AF37]/80 transition-all group flex flex-col justify-between">
+            <div className="p-4 sm:p-6 rounded-xl border border-zinc-800 bg-[#05070c] hover:border-[#D4AF37]/80 transition-all group flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-[9px] font-mono px-2.5 py-0.5 rounded bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 uppercase font-semibold">
@@ -487,16 +487,16 @@ export const EpisodesSection: React.FC = () => {
                 </div>
 
                 {/* Branded Golden Logo Box */}
-                <div className="h-20 w-full rounded-lg bg-black/90 border border-zinc-800/90 p-3 flex items-center justify-center mb-4 group-hover:border-[#D4AF37]/60 transition-colors shadow-inner">
+                <div className="h-16 sm:h-20 w-full rounded-lg bg-black/90 border border-zinc-800/90 p-2.5 sm:p-3 flex items-center justify-center mb-4 group-hover:border-[#D4AF37]/60 transition-colors shadow-inner">
                   <img
                     src={venkateshaLogo}
                     alt="Venkatesha Pure Veg Restaurant Logo"
-                    className="h-full w-auto max-w-[280px] object-contain drop-shadow-[0_2px_14px_rgba(212,175,55,0.4)]"
+                    className="h-full w-auto max-w-[240px] sm:max-w-[280px] object-contain drop-shadow-[0_2px_14px_rgba(212,175,55,0.4)]"
                   />
                 </div>
 
                 <h4
-                  className="text-xl font-bold text-white uppercase group-hover:text-[#D4AF37] transition-colors"
+                  className="text-lg sm:text-xl font-bold text-white uppercase group-hover:text-[#D4AF37] transition-colors"
                   style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
                   Venkatesha Pure Veg Restaurant
@@ -513,7 +513,7 @@ export const EpisodesSection: React.FC = () => {
             </div>
 
             {/* Sponsor 2: Tulsi (तुलसी फर्निचर व इलेक्ट्रॉनिक्स) */}
-            <div className="p-6 rounded-xl border border-zinc-800 bg-[#05070c] hover:border-[#D4AF37]/80 transition-all group flex flex-col justify-between">
+            <div className="p-4 sm:p-6 rounded-xl border border-zinc-800 bg-[#05070c] hover:border-[#D4AF37]/80 transition-all group flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-[9px] font-mono px-2.5 py-0.5 rounded bg-blue-950/60 border border-blue-500/40 text-blue-400 uppercase font-semibold">
@@ -525,16 +525,16 @@ export const EpisodesSection: React.FC = () => {
                 </div>
 
                 {/* Branded Blue Logo Box */}
-                <div className="h-20 w-full rounded-lg bg-white p-2.5 flex items-center justify-center mb-4 border border-zinc-700 shadow-md">
+                <div className="h-16 sm:h-20 w-full rounded-lg bg-white p-2.5 flex items-center justify-center mb-4 border border-zinc-700 shadow-md">
                   <img
                     src={tulsiLogo}
                     alt="Tulsi Furniture & Electronics Logo"
-                    className="h-full w-auto max-w-[210px] object-contain"
+                    className="h-full w-auto max-w-[190px] sm:max-w-[210px] object-contain"
                   />
                 </div>
 
                 <h4
-                  className="text-xl font-bold text-white uppercase group-hover:text-[#D4AF37] transition-colors"
+                  className="text-lg sm:text-xl font-bold text-white uppercase group-hover:text-[#D4AF37] transition-colors"
                   style={{ fontFamily: "'Space Grotesk', sans-serif" }}
                 >
                   Tulsi <span className="text-[#D4AF37] font-normal">(तुलसी)</span>
@@ -585,7 +585,7 @@ export const EpisodesSection: React.FC = () => {
       {/* ================= INTERACTIVE EPISODE DETAIL MODAL ================= */}
       <AnimatePresence>
         {selectedEpisode && (
-          <div className="fixed inset-0 z-[9990] flex items-center justify-center p-4 sm:p-6 lg:p-10">
+          <div className="fixed inset-0 z-[9990] flex items-center justify-center p-2 sm:p-6 lg:p-10">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -601,14 +601,14 @@ export const EpisodesSection: React.FC = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.94, y: 25 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className="relative w-full max-w-4xl bg-[#090e17] border-2 border-[#00d2ff]/50 rounded-2xl overflow-hidden shadow-[0_0_80px_rgba(0,210,255,0.3)] z-10 max-h-[90vh] flex flex-col"
+              className="relative w-full max-w-4xl bg-[#090e17] border-2 border-[#00d2ff]/50 rounded-2xl overflow-hidden shadow-[0_0_80px_rgba(0,210,255,0.3)] z-10 max-h-[92dvh] sm:max-h-[90vh] flex flex-col"
             >
               {/* Modal Top Nav */}
-              <div className="flex items-center justify-between px-6 sm:px-8 py-4 border-b border-zinc-800 bg-[#05080e]/95">
-                <div className="flex items-center space-x-3">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#00d2ff] animate-ping" />
-                  <span className="text-[11px] font-mono tracking-widest text-[#00d2ff] uppercase">
-                    {selectedEpisode.number} // FULL BRIEFING DOSSIER
+              <div className="flex items-center justify-between px-4 sm:px-8 py-3.5 sm:py-4 border-b border-zinc-800 bg-[#05080e]/95">
+                <div className="flex items-center space-x-2.5 sm:space-x-3 truncate">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#00d2ff] animate-ping shrink-0" />
+                  <span className="text-[10px] sm:text-[11px] font-mono tracking-widest text-[#00d2ff] uppercase truncate">
+                    {selectedEpisode.number} // BRIEFING DOSSIER
                   </span>
                   <span className="text-zinc-600 hidden sm:inline">•</span>
                   <span className="text-xs font-mono text-[#D4AF37] hidden sm:inline">
@@ -618,7 +618,7 @@ export const EpisodesSection: React.FC = () => {
 
                 <button
                   onClick={() => setSelectedEpisode(null)}
-                  className="w-8 h-8 flex items-center justify-center rounded-lg border border-zinc-700 bg-zinc-900 text-zinc-300 hover:text-white hover:border-[#00d2ff] transition-colors text-sm"
+                  className="w-8 h-8 flex items-center justify-center rounded-lg border border-zinc-700 bg-zinc-900 text-zinc-300 hover:text-white hover:border-[#00d2ff] transition-colors text-sm shrink-0 ml-2"
                   aria-label="Close modal"
                 >
                   ✕
@@ -626,7 +626,7 @@ export const EpisodesSection: React.FC = () => {
               </div>
 
               {/* Scrollable Content Body */}
-              <div className="overflow-y-auto p-6 sm:p-8 space-y-8">
+              <div className="overflow-y-auto p-4 sm:p-8 space-y-6 sm:space-y-8">
                 
                 {/* Top Split: Guest Photo & Episode Identity */}
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-center">

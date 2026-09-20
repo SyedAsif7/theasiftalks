@@ -33,7 +33,7 @@ export const PremiereAlertBanner: React.FC = () => {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 30, scale: 0.95 }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 max-w-sm sm:max-w-md w-[calc(100vw-2rem)] rounded-2xl border border-[#00d2ff]/40 bg-[#070b14]/95 backdrop-blur-xl p-5 shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_25px_rgba(0,210,255,0.15)]"
+          className="fixed bottom-3 left-3 right-3 sm:left-auto sm:right-6 sm:bottom-6 z-40 w-auto sm:w-full max-w-sm sm:max-w-md rounded-2xl border border-[#00d2ff]/40 bg-[#070b14]/95 backdrop-blur-xl p-4 sm:p-5 shadow-[0_20px_50px_rgba(0,0,0,0.9),0_0_25px_rgba(0,210,255,0.15)]"
         >
           {/* Top Header Row */}
           <div className="flex items-center justify-between mb-3">

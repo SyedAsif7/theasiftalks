@@ -35,7 +35,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6 lg:p-10">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-2 sm:p-6 lg:p-10">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -54,7 +54,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
             className="relative w-full max-w-5xl bg-[#0a0f18] border border-[#00d2ff]/40 rounded-xl overflow-hidden shadow-[0_0_60px_rgba(0,210,255,0.25)] z-10"
           >
             {/* Modal Header */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-[#00d2ff]/20 bg-[#060a12]/90">
+            <div className="flex items-center justify-between px-3.5 sm:px-6 py-3 sm:py-4 border-b border-[#00d2ff]/20 bg-[#060a12]/90">
               <div className="flex items-center space-x-3">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#ff0033] animate-pulse" />
                 <span className="text-[10px] font-mono tracking-[0.25em] text-[#00d2ff] uppercase">
@@ -86,7 +86,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
             </div>
 
             {/* Modal Footer */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between px-6 py-4 bg-[#060a12]/90 border-t border-[#00d2ff]/20 gap-3">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between px-3.5 sm:px-6 py-3 sm:py-4 bg-[#060a12]/90 border-t border-[#00d2ff]/20 gap-3">
               <div>
                 <h4
                   className="text-lg text-white font-normal uppercase"
